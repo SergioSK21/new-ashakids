@@ -33,7 +33,10 @@ async function crearReunionDesdeCard(reunionId) {
         alert('❌ No se pudo crear la reunión');
     }
 }
-
+function cambiarSeccion(elemento) {
+  const seccion = elemento.getAttribute("data-seccion");
+  cargarContenido(seccion); // Esta es la función que ya tienes
+}
 
   if (seccion === "agenda") {
     contenedor.innerHTML =
