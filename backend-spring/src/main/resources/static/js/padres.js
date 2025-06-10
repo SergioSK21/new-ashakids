@@ -141,3 +141,5 @@ function mostrarModalZoom(link) {
 document.addEventListener("DOMContentLoaded", () => {
   vincularBotonesReservar();
 });
+
+

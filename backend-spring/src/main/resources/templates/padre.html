@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" th:href="@{/css/bienvenido.css}">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     body {
       background-color: #f4fbff;
@@ -125,6 +125,9 @@
       <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
     </div>
     <nav class="nav flex-column">
+      <a class="nav-link" href="#" onclick="generarFactura()">
+        <i class="fas fa-file-invoice me-2"></i> Generar Reporte
+      </a>
       <a class="nav-link active" href="#">
         <i class="fas fa-home me-2"></i> Dashboard
       </a>
@@ -204,6 +207,34 @@
 
   <script th:src="@{/js/padres.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  async function generarFactura() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Contenido de la factura
+    doc.setFontSize(16);
+    doc.text("🧾 Factura de Consulta - AshaKids", 20, 20);
+
+    doc.setFontSize(12);
+    doc.text("Fecha: " + new Date().toLocaleDateString(), 20, 30);
+    doc.text("Paciente: Juan", 20, 40);
+    doc.text("Padre/Madre: Javier", 20, 50);
+    doc.text("Psicóloga: Susana Horia", 20, 60);
+    doc.text("Modalidad: Virtual (Zoom)", 20, 70);
+    doc.text("Duración: 60 minutos", 20, 80);
+    doc.text("Costo: S/. 80.00", 20, 90);
+
+    doc.setFontSize(10);
+    doc.text("Gracias por confiar en AshaKids ❤️", 20, 110);
+
+    // Descargar el PDF
+    doc.save("factura_ashakids.pdf");
+  }
+</script>
+
+
 </body>
 
 </html>
