@@ -1,0 +1,1 @@
+ASHAKids es una startup dedicada a brindar servicios de apoyo al desarrollo infantil. Su misión es facilitar a padres y cuidadores el acceso a asesorías profesionales y recursos de estimulación temprana mediante una plataforma accesible y amigable.
