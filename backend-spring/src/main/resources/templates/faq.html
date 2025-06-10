@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  
+<head th:replace="index :: Head"></head>
+
+<body style="padding-top: 180px;background-color: #FFF8EC;">
+
+<!-- Navbar -->
+<nav th:replace="index :: Navbar"></nav>
+
+<!-- SECCIONN DE PREGUNTAS FRECUENTES -->
+
+<div class="container text-center">
+  <h1 class="text-success mb-4">Preguntas Frecuentes</h1>
+
+  <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
+    <button class="btn btn-primary px-4 py-2 rounded-pill" onclick="mostrarFaq('comunes')">
+      <i class="bi bi-chat-left-text me-2"></i>Comunes
+    </button>
+    <button class="btn btn-success px-4 py-2 rounded-pill" onclick="mostrarFaq('tecnologia')">
+      <i class="bi bi-cpu me-2"></i>Tecnología
+    </button>
+  </div>
+
+  <!-- Acordeón: Preguntas Comunes -->
+  <div class="accordion faq-comunes" id="faqComunes" style="margin-bottom: 80px;">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          ¿Cómo puedo agendar una cita para mi hijo o hija?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqComunes">
+        <div class="accordion-body">
+          Puedes hacerlo desde nuestra plataforma web. Primero iniciando sesión, y luego eligiendo el tipo de terapia, fecha y modalidad.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          ¿Qué servicios de terapia ofrecen en AshaKids?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqComunes">
+        <div class="accordion-body">
+          Contamos con terapia de lenguaje, estimulación temprana y orientación para padres, en formato virtual y presencial.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          ¿Qué edad deben tener los niños para empezar la terapia?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqComunes">
+        <div class="accordion-body">
+          Atendemos a niños desde los 2 años, ajustando las sesiones a su etapa de desarrollo.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+          ¿Puedo cambiar o cancelar una cita programada?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqComunes">
+        <div class="accordion-body">
+          Sí, puedes hacerlo desde tu cuenta con al menos 24 horas de anticipación.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+          ¿La terapia es personalizada según las necesidades del niño?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqComunes">
+        <div class="accordion-body">
+          Sí, nuestras sesiones se adaptan al ritmo, necesidades y avances de cada niño.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acordeón: Preguntas de Tecnología -->
+  <div class="accordion faq-tecnologia d-none" id="faqTecnologia" style="margin-bottom: 80px;">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingT1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT1">
+          ¿Cómo funciona la terapia virtual?
+        </button>
+      </h2>
+      <div id="collapseT1" class="accordion-collapse collapse show" data-bs-parent="#faqTecnologia">
+        <div class="accordion-body">
+          Se realiza por videollamada segura compatible con celular, tablet o PC.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingT2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT2">
+          ¿Necesito registrarme para usar la plataforma?
+        </button>
+      </h2>
+      <div id="collapseT2" class="accordion-collapse collapse" data-bs-parent="#faqTecnologia">
+        <div class="accordion-body">
+          Sí, es necesario para agendar citas, hacer seguimiento y acceder a contenido exclusivo.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingT3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT3">
+          ¿Qué hago si tengo problemas técnicos durante una sesión virtual?
+        </button>
+      </h2>
+      <div id="collapseT3" class="accordion-collapse collapse" data-bs-parent="#faqTecnologia">
+        <div class="accordion-body">
+          Puedes escribirnos desde la sección de Soporte o por WhatsApp para recibir ayuda inmediata.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingT4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT4">
+          ¿Mis datos y los de mi hijo/a están protegidos?
+        </button>
+      </h2>
+      <div id="collapseT4" class="accordion-collapse collapse" data-bs-parent="#faqTecnologia">
+        <div class="accordion-body">
+          Sí, usamos protocolos de seguridad y encriptación para proteger tu información.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingT5">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseT5">
+          ¿La plataforma tiene funciones como cambio de idioma o modo oscuro?
+        </button>
+      </h2>
+      <div id="collapseT5" class="accordion-collapse collapse" data-bs-parent="#faqTecnologia">
+        <div class="accordion-body">
+          ¡Sí! Puedes activarlas desde el menú superior según tu preferencia.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  function mostrarFaq(tipo) {
+    const comunes = document.querySelector('.faq-comunes');
+    const tecnologia = document.querySelector('.faq-tecnologia');
+
+    if (tipo === 'comunes') {
+      comunes.classList.remove('d-none');
+      tecnologia.classList.add('d-none');
+    } else {
+      comunes.classList.add('d-none');
+      tecnologia.classList.remove('d-none');
+    }
+  }
+</script>
+
+
+   <!-- Footer -->
+<footer th:replace="index :: Footer"></footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

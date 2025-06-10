@@ -1,0 +1,158 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f6fa;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PANELES */
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 40px;
+  height: 100%;
+}
+
+.left-panel {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-panel img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+/* PANEL DE LOGIN */
+.right-panel {
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-panel {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-panel h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1976D2;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #1976D2;
+  outline: none;
+}
+
+.login-form small {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.restablecer-contraseña {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.forgot-password {
+  color: #1976D2;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* BOTÓN LOGIN */
+.login-button {
+  background-color: #1976D2;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #115293;
+}
+
+/* MENSAJE DE ERROR */
+.error-message {
+  margin-top: 15px;
+  color: #e53935;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    padding: 20px;
+  }
+
+  .card-panel {
+    padding: 30px 20px;
+  }
+}

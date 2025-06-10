@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="Head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASHAKidsWeb</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav th:fragment="Navbar" class="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/index}">
+        <img th:src="@{/img/logo.svg}" alt="ASHAKids" height="100">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3" th:href="@{/nosotros}">Sobre Nosotros</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3" th:href="@{/servicios}">Servicios</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3" th:href="@{/actividades}">Actividades</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3" th:href="@{/actividades}">Hola</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fs-5 fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
+              Recursos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" th:href="@{/guiapadres}">Guía para Padres</a></li>
+              <li><a class="dropdown-item" th:href="@{/faq}">FAQs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3" th:href="@{/opiniones}">Opiniones</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-semibold px-3 py-1 text-white bg-warning rounded border border-warning ms-2"
+              th:href="@{/index#Unete}">
+              Contacto
+            </a>
+
+          </li>
+
+          <!-- Icono de Iniciar Sesión -->
+          <li class="nav-item">
+            <a class="nav-link fs-5 px-3 d-flex align-items-center" th:href="@{/login}">
+              <img th:src="@{/img/Login.svg}" alt="Iniciar Sesión" width="40" height="40" class="me-2">
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="py-5"
+    style="background-color: #fff8ec; background-image: url('img/Encabezado.svg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 850px; margin-top: 100px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+          <h1 class="fw-bold mt-5"
+            style="font-size: 5.5rem; font-family: 'MiFuente'; color: #ff9900; text-shadow: 3px 3px #000;">Educa con
+            amor <br> e inspira el futuro</h1>
+          <p class="lead fw-semibold mt-4" style="color: #1a1a6d; font-size: 1.5rem;">
+            Transformamos el aprendizaje en una experiencia fascinante, que hace que cada momento educativo sea tan
+            entretenido como enriquecedor.
+          </p>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+            <a th:href="@{nosotros}" class="btn btn-outline-danger fw-bold px-4 py-2 fs-4">Información</a>
+            <a th:href="@{actividades}" class="btn btn-warning fw-bold px-4 py-2 text-white fs-4">Actividades</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tarjetas -->
+  <section class="py-5"
+    style="background-image: url('img/Fondo_Car.svg'); background-size: cover; background-position: center 20%; background-repeat: no-repeat; min-height: 1000px;">
+    <div class="container" style="margin-top: 90px">
+      <div class="row g-4 justify-content-center text-center">
+        <div class="text-center mb-2">
+          <h2 class="fw-bold"
+            style="color: #ff9900; font-family: 'MiFuente'; font-size: 3.8rem; text-shadow: 2px 2px 4px #000000;">
+            ¿Te gustaría convertir cada momento en una oportunidad de aprendizaje?
+          </h2>
+        </div>
+        <!-- Tarjeta 1 -->
+        <div class="col-12 col-md-4">
+          <div class="tarjeta-con-fondo bg-white p-4 rounded-4 shadow-lg h-100 transition-hover">
+            <img th:src="@{/img/Card1.svg}" alt="Explora" class="img-fluid mb-3 rounded-3" style="max-height: 350px;">
+            <h4>Sesiones personalizadas</h4>
+            <p>Terapias de diferentes modalidades guiadas por profesionales para reforzar el habla y la comprensión.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-12 col-md-4">
+          <div class="tarjeta-con-fondo bg-white p-4 rounded-4 shadow-lg h-100 transition-hover">
+            <img th:src="@{/img/Card2.svg}" alt="Materiales" class="img-fluid mb-3 rounded-3" style="max-height: 350px;">
+            <h4>Materiales Didácticos</h4>
+            <p>Recursos y seguimiento para que los padres puedan acompañar el proceso terapéutico.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-12 col-md-4">
+          <div class="tarjeta-con-fondo bg-white p-4 rounded-4 shadow-lg h-100 transition-hover">
+            <img th:src="@{/img/Card3.svg}" alt="Aprende" class="img-fluid mb-3 rounded-3" style="max-height: 350px;">
+            <h4>Guías y recursos</h4>
+            <p>Encuentra materiales adaptados para enseñar jugando, con acompañamiento constante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conócenos -->
+  <section class="bg-light py-5"
+    style="background-image: url('img/Fondo_conoce.svg'); background-size: cover; background-position: center 40%;">
+    <div class="container text-center">
+      <div class="contenedor-aprendizaje">
+        <div class="ca-1">
+          <h3 class="mb-3" style="font-size: 2.5rem;">Tu fuente de aprendizaje</h3>
+          <p style="font-size: 1.25rem;">Una combinación única de creatividad, curiosidad y experiencia práctica.</p>
+          <a th:href="@{nosotros}" class="btn btn-outline-primary mb-4">Conócenos más</a>
+        </div>
+      </div>
+
+      <div class="contenedor-diversion">
+        <div class="img-con-diversion">
+          <img th:src="@{/img/ConoceMas.png}" alt="Imagen de diversión" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Únete a nuestra familia -->
+  <section id="Unete" class="py-5"
+    style="background-image: url('img/Fondo_Correo.svg'); background-size: cover; background-position: center; height: 100vh;">
+    <div class="container text-center" style="margin-top: 350px;">
+      <h4 style="font-size: 1.8rem; font-weight: 800; color: rgb(52, 25, 75); font-family: 'Poppins', sans-serif;">Únete
+        a nuestra familia</h4>
+      <form th:action="@{http://localhost/backend-mail/crear-reunion.html}" class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
+        <input type="email" class="form-control w-auto correo-input" placeholder="Escribe tu correo"
+          style="background-color: #987fc3; color: white; border-radius: 25px; padding: 10px 20px; border: none; min-width: 250px;">
+        <input type="submit" class="btn" value="Enviar"
+          style="background-color: #f74f27; color: white; font-weight: 600; border-radius: 25px; padding: 10px 30px;">
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer th:fragment="Footer" class="bg-black text-white py-1 pt-4">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Información</h5>
+          <ul class="list-unstyled">
+            <li><a th:href="@{/nosotros}" class="text-white" style="text-decoration: none;">Acerca de nosotros</a></li>
+            <li><a th:href="@{/TerminosCondiciones}" class="text-white" style="text-decoration: none;">Términos y
+                Condiciones</a></li>
+            <li><a th:href="@{/PoliticaPrivacidad}" class="text-white" style="text-decoration: none;">Política de
+                Privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Recursos</h5>
+          <ul class="list-unstyled">
+            <li><a th:href="@{/ActivDidac}" class="text-white" style="text-decoration: none;">Materiales Didácticos</a>
+            </li>
+            <li><a th:href="@{/index}" class="text-white" style="text-decoration: none;">Guías</a></li>
+            <li><a th:href="@{/AcercaDe}" class="text-white" style="text-decoration: none;">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Conéctate con nosotros</h5>
+          <ul class="list-inline justify-content-center">
+            <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61565597855845"
+                target="_blank" class="text-white" style="text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/edukids546/" target="_blank"
+                class="text-white" style="text-decoration: none;"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://x.com/Manzanita6432" target="_blank" class="text-white"
+                style="text-decoration: none;"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="http://www.linkedin.com/in/amparito-maximiliano-rodriguez"
+                target="_blank" class="text-white" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p>&copy; 2025 AshaKids. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

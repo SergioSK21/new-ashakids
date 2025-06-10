@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="index :: Head"></head>
+
+<body style="padding-top: 180px;background-color: #FFF8EC;">
+
+<!-- Navbar -->
+<nav th:replace="index :: Navbar"></nav>
+
+<!-- Seccion -->
+
+<section class="py-5 body">
+    
+  <h2 class="text-center fw-bold mb-4"style="font-family: 'mifuente', sans-serif; color: #f00dff;">¿Qué dicen los padres?</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Opinión 1 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="profile-container mb-3">
+                            <img th:src="@{/img/madre.jpg}" alt="Patricia L." class="profile-img">
+                            <div>
+                                <h6 class="card-subtitle text-muted mb-0">— Patricia L.</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text">"Mi hija ha mejorado mucho en su pronunciación gracias a las sesiones. ¡Recomendado 100%!"</p>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Opinión 2 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="profile-container mb-3">
+                            <img th:src="@{/img/padre.jpg}" alt="Juan M." class="profile-img">
+                            <div>
+                                <h6 class="card-subtitle text-muted mb-0">— Juan M.</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text">"AshaKids no solo es accesible, sino también interactivo. Me encanta acompañar a mi hijo con las actividades."</p>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- Opinión 3 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="profile-container mb-3">
+                            <img th:src="@{/img/madre.jpg}" alt="Elena R." class="profile-img">
+                            <div>
+                                <h6 class="card-subtitle text-muted mb-0">— Elena R.</h6>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i> 
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text">"Los terapeutas son muy profesionales y tienen mucha paciencia. ¡Gracias AshaKids!"</p>
+                    </div>
+                </div>
+            </div>
+
+      <!-- Opinión 4 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/madre.jpg}" alt="Ana G." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Ana G.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i> 
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"Mi hijo se divierte mucho aprendiendo y ha mostrado un avance considerable en su desarrollo."</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opinión 5 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/padre.jpg}" alt="Carlos T." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Carlos T.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> 
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"Una plataforma educativa que realmente hace la diferencia en la vida de nuestros niños. ¡Totalmente recomendada!"</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opinión 6 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/madre.jpg}" alt="Rosa P." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Rosa P.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> 
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"Muy agradecida con AshaKids, han ayudado mucho a que mi hija se exprese mejor. ¡Mil gracias!"</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opinión 7 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/padre.jpg}" alt="Javier F." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Javier F.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i> 
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"La calidad de las clases y el trato de los terapeutas es excelente. Recomendado para todos los padres."</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opinión 8 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/madre.jpg}" alt="Lorena D." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Lorena D.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"Mi hija está mucho más comunicativa desde que empezamos con AshaKids. ¡Lo recomiendo sin duda!"</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Opinión 9 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <div class="profile-container mb-3">
+                <img th:src="@{/img/padre.jpg}" alt="Mario C." class="profile-img">
+                <div>
+                    <h6 class="card-subtitle text-muted mb-0">— Mario C.</h6>
+                    <div class="stars mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> 
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">"Gracias a AshaKids, mi hijo ha aprendido mucho en tan poco tiempo. ¡Es un verdadero cambio para él!"</p>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+    <!-- Footer -->
+<footer th:replace="index :: Footer"></footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

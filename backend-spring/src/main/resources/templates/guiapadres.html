@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="index :: Head"></head>
+
+<body style="padding-top: 180px;background-color: #FFF8EC;">
+
+
+    <!-- Navbar -->
+<nav th:replace="index :: Navbar"></nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1>Guía para Padres</h1>
+                <p>Consejos útiles para acompañar el desarrollo de tus hijos.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img th:src="@{/img/aprendizaje comer.png}" class="card-img-top" alt="Consejos de alimentación">
+                    <div class="card-body">
+                        <h5 class="card-title">Alimentación Saludable</h5>
+                        <p class="card-text">Descubre cómo mejorar la alimentación de tus hijos para un crecimiento saludable.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img th:src="@{/img/aprendizaje infantil.png}" class="card-img-top" alt="Actividades educativas">
+                    <div class="card-body">
+                        <h5 class="card-title">Actividades Educativas</h5>
+                        <p class="card-text">Ideas de actividades divertidas y educativas para hacer en casa.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img th:src="@{/img/rutina de sueño.png}" class="card-img-top" alt="Rutinas saludables">
+                    <div class="card-body">
+                        <h5 class="card-title">Rutinas de Sueño</h5>
+                        <p class="card-text">Consejos para establecer una rutina de sueño adecuada para los niños.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección dinámica de preguntas frecuentes -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ¿Cómo mejorar la comunicación con mi hijo?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                La comunicación abierta y sincera es clave. Escucha activamente a tu hijo, valida sus sentimientos y utiliza un lenguaje positivo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Cómo puedo fomentar la autonomía en mi hijo?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Anima a tu hijo a tomar decisiones y a ser responsable de pequeñas tareas en el hogar. Esto refuerza su confianza y habilidades.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faqThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Qué hacer si mi hijo tiene miedo de ir a la escuela?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Habla con tu hijo para entender la causa de su miedo. Anímalo a compartir sus sentimientos y ofrécele seguridad y apoyo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer th:replace="index :: Footer"></footer>
+
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
