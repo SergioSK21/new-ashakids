@@ -23,7 +23,7 @@ body, html {
 .left-panel, .right-panel {
   flex: 1;
   padding: 40px;
-  height: 100%;
+  height: 100vh; /* ← forzar altura completa */
 }
 
 .left-panel {
@@ -138,6 +138,20 @@ body, html {
   text-align: center;
 }
 
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1976D2;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .container {
@@ -155,4 +169,30 @@ body, html {
   .card-panel {
     padding: 30px 20px;
   }
+}
+
+.volver-container {
+    display: flex;
+    justify-content: start;
+}
+
+.btn-volver {
+    background-color: #ff9900;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.btn-volver:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: white;
 }
