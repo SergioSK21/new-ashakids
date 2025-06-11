@@ -11,6 +11,7 @@
   <link rel="stylesheet" th:href="@{/css/bienvenido.css}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
+    
     body {
       background-color: #f4fbff;
       font-family: 'Segoe UI', sans-serif;
@@ -159,26 +160,33 @@
         🎉 ¡Explora tu espacio terapéutico y descubre nuevas actividades para ti!
       </div>
 
-<div class="row justify-content-center g-3 mb-4">
-  <div class="col-6 col-md-3 text-center">
-    <div class="bg-info text-white p-3 card-feature shadow-sm " data-seccion="agenda" onclick="cambiarSeccion(this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="feature-icon mb-2" alt="Agenda">
-      <div class="feature-text">Agenda</div>
-    </div>
-  </div>
-  <div class="col-6 col-md-3 text-center">
-    <div class="bg-success text-white p-3 card-feature shadow-sm" data-seccion="foros" onclick="cambiarSeccion(this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" class="feature-icon mb-2" alt="Foros">
-      <div class="feature-text">Foros</div>
-    </div>
-  </div>
-  <div class="col-6 col-md-3 text-center">
-    <div class="bg-warning p-3 card-feature shadow-sm" data-seccion="tips" onclick="cambiarSeccion(this)">
-      <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" class="feature-icon mb-2" alt="Tips">
-      <div class="feature-text">Tips</div>
-    </div>
-  </div>
-</div>
+      <div class="row justify-content-center g-3 mb-4">
+        <div class="col-6 col-md-3 text-center">
+          <a class="text-decoration-none" th:href="@{/agenda}">
+            <div class="bg-info text-white p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="feature-icon mb-2" alt="Agenda">
+              <div class="feature-text">Agenda</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <a class="text-decoration-none" th:href="@{/foros}">
+            <div class="bg-success text-white p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" class="feature-icon mb-2" alt="Foros">
+              <div class="feature-text">Foros</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <a class="text-decoration-none" th:href="@{/tips}">
+            <div class="bg-warning text-dark p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" class="feature-icon mb-2" alt="Tips">
+              <div class="feature-text">Tips</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
 
 
       <h4 class="mt-4">Próximas Citas</h4>

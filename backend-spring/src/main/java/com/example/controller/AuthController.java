@@ -112,5 +112,10 @@ public class AuthController {
     public String mostrarPsicologos(Model model) {
         return "psicologos";
     }
+
+        @GetMapping("/agenda")
+    public String mostrarAgenda(Model model) {
+        return "agenda";
+    }
     
 }
