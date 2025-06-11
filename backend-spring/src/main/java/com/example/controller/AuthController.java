@@ -139,6 +139,20 @@ public class AuthController {
         return "recompensas";
     }
 
+    
+    @GetMapping("/terapeuta")
+    public String mostrarVistaTerapeuta(HttpSession session, Model model) {
+        Usuario usuario = (Usuario) session.getAttribute("usuarioObj");
+
+        if (usuario != null && usuario.getRol() == Rol.terapeuta) {
+            model.addAttribute("terapeuta", usuario); // Pasamos el objeto terapeuta
+            return "terapeuta";
+        }
+
+        return "redirect:/login"; // redirigir si no es terapeuta
+    }
+    
+
     @GetMapping("/administrador")
     public String mostrarVistaAdministrador(HttpSession session, Model model) {
         Usuario usuario = (Usuario) session.getAttribute("usuarioObj");
