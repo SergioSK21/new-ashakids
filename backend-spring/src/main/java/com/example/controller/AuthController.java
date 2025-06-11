@@ -108,5 +108,9 @@ public class AuthController {
         return "ejemplo1";
     }
 
+    @GetMapping("/psicologos")
+    public String mostrarPsicologos(Model model) {
+        return "psicologos";
+    }
     
 }
