@@ -17,14 +17,15 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String contraseña;
+    private String telefono;
+
+    @Column(unique = true)
+    private String codigo; // Código ASHA, por ejemplo "u23428", "t32473"
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
-    private String telefono;
-
     public enum Rol {
         padre, terapeuta, admin
     }
-    
 }

@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.model.Usuario;
+import com.example.model.Usuario.Rol;
 import com.example.repository.UsuarioRepository;
 import com.example.repository.PadreRepository;
 import com.example.repository.CitaRepository;
@@ -19,6 +20,7 @@ import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 @Controller
 public class AuthController {
@@ -43,28 +45,42 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String correo,
+    public String login(@RequestParam String codigo,
                         @RequestParam String contraseña,
                         HttpSession session,
                         Model model) {
 
-        Optional<Usuario> usuarioDB = usuarioRepository.findByCorreoAndContraseña(correo, contraseña);
+        Optional<Usuario> usuarioDB = usuarioRepository.findByCodigoAndContraseña(codigo, contraseña);
 
         if (usuarioDB.isPresent()) {
             Usuario u = usuarioDB.get();
 
             session.setAttribute("usuario", u.getNombre());
             session.setAttribute("rol", u.getRol());
-            session.setAttribute("correo", u.getCorreo());
-            session.setAttribute("usuarioObj", u); // <<< esto es clave
-            
+            session.setAttribute("codigo", u.getCodigo());
+            session.setAttribute("usuarioObj", u); // Objeto completo
 
-            return "redirect:/padre"; // <<< redirige a /padres
+            System.out.println("ROL OBTENIDO: " + u.getRol());
+            System.out.println("TIPO DE ROL: " + u.getRol().getClass().getName());
+
+            switch (u.getRol()) {
+                case padre:
+                    return "redirect:/padre";
+                case terapeuta:
+                    return "redirect:/terapeuta";
+                case admin:
+                    return "redirect:/administrador";
+                default:
+                    model.addAttribute("error", "Rol desconocido");
+                    return "login";
+            }
+
         } else {
-            model.addAttribute("error", "Correo o contraseña incorrectos");
+            model.addAttribute("error", "Código o contraseña incorrectos");
             return "login";
         }
     }
+
 
     @GetMapping("/padre")
     public String mostrarBienvenida(HttpSession session, Model model) {
@@ -123,4 +139,16 @@ public class AuthController {
         return "recompensas";
     }
 
+    @GetMapping("/administrador")
+    public String mostrarVistaAdministrador(HttpSession session, Model model) {
+        Usuario usuario = (Usuario) session.getAttribute("usuarioObj");
+
+        if (usuario != null && usuario.getRol() == Rol.admin) {
+            model.addAttribute("admin", usuario); // <- Esta línea es la clave
+            return "administrador";
+        }
+
+        return "redirect:/login"; // redirigir si no es admin
+    }
+    
 }

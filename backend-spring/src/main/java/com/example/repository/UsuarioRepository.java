@@ -6,4 +6,6 @@ import com.example.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Optional<Usuario> findByCorreoAndContraseña(String correo, String contraseña);
+    Optional<Usuario> findByCodigoAndContraseña(String codigo, String contraseña);
+    Usuario findByCodigo(String codigo);
 }
