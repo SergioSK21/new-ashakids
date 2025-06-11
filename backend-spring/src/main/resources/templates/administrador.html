@@ -41,6 +41,7 @@
         z-index: 1050;
         transition: left 0.3s ease;
       }
+      
 
       .sidebar.show {
         left: 0;
@@ -71,6 +72,24 @@
         display: none;
       }
     }
+
+    #sidebar .nav-link {
+      color: #ffffff; /* blanco inicial */
+      border-radius: 5px;
+      padding: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #sidebar .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* fondo sutil al pasar */
+      color: #ffc107 !important; /* texto dorado */
+      text-decoration: none;
+    }
+
+    #sidebar .nav-link:hover i {
+      color: #ffc107 !important; /* iconos también dorados */
+    }
+
   </style>
 </head>
 <body>
@@ -84,26 +103,29 @@
 </nav>
 
 <div class="d-flex" style="min-height: 100vh;">
+
   <!-- Sidebar -->
   <div class="bg-dark text-white p-3 sidebar" id="sidebar">
     <div class="text-center mb-4">
-      <i class="fas fa-brain fa-2x mb-2"></i>
-      <h4 class="fw-bold">ASHAKids</h4>
-      <span class="text-secondary">Administrador</span>
+      <a th:href="@{/}">
+        <img th:src="@{/img/logo.svg}" alt="Logo" width="180"></a>
+      <h4 class="fw-bold" style="color: #555555;">Administrador</h4>
     </div>
 
     <ul class="nav flex-column">
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin}"><i class="fas fa-home me-2"></i> Panel Principal</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/usuarios}"><i class="fas fa-user me-2"></i> Usuarios</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/psicologos}"><i class="fas fa-user-md me-2"></i> Psicólogos</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/reportes}"><i class="fas fa-chart-line me-2"></i> Reportes</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/contenido}"><i class="fas fa-book-open me-2"></i> Contenido</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/terapias}"><i class="fas fa-stethoscope me-2"></i> Terapias</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/juegos}"><i class="fas fa-gamepad me-2"></i> Juegos</a></li>
-      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/admin/configuracion}"><i class="fas fa-cogs me-2"></i> Configuración</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador}"><i class="fas fa-home me-2"></i> Panel Principal</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/usuarios}" style="pointer-events: none;"><i class="fas fa-user me-2"></i> Usuarios</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/psicologos}" style="pointer-events: none;"><i class="fas fa-user-md me-2"></i> Psicólogos</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/reportes}" style="pointer-events: none;"><i class="fas fa-chart-line me-2"></i> Reportes</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/contenido}" style="pointer-events: none;"><i class="fas fa-book-open me-2"></i> Contenido</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/terapias}" style="pointer-events: none;"><i class="fas fa-stethoscope me-2"></i> Terapias</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/juegos}" style="pointer-events: none;"><i class="fas fa-gamepad me-2"></i> Juegos</a></li>
+      <li class="nav-item mb-2"><a class="nav-link text-white" th:href="@{/administrador/configuracion}" style="pointer-events: none;"><i class="fas fa-cogs me-2"></i> Configuración</a></li>
       <li class="nav-item mt-4"><a class="nav-link text-danger" th:href="@{/login}"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a></li>
     </ul>
+
   </div>
+  
   <div class="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
   <!-- Contenido principal -->

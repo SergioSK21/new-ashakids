@@ -151,8 +151,56 @@ public class AuthController {
 
         return "redirect:/login"; // redirigir si no es terapeuta
     }
-    
 
+    //ENRUTAMIENTOS TERAPEUTA
+    @GetMapping("/terapeuta/inicio")
+    public String mostrarInicioTerapeuta() {
+        return "inicioTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/mensajes")
+    public String mostrarMensajesTerapeuta() {
+        return "mensajesTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/pacientes")
+    public String mostrarPacientesTerapeuta() {
+        return "pacientesTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/agenda")
+    public String mostrarAgendaTerapeuta() {
+        return "agendaTerapeuta";
+    }
+
+
+    @GetMapping("/terapeuta/sesiones")
+    public String mostrarSesionesTerapeuta() {
+        return "sesionesTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/material")
+    public String mostrarMaterialTerapeuta() {
+        return "materialTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/progreso")
+    public String mostrarProgresoTerapeuta() {
+        return "progresoTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/perfil")
+    public String mostrarPerfilTerapeuta() {
+        return "perfilTerapeuta";
+    }
+
+    @GetMapping("/terapeuta/configuracion")
+    public String mostrarConfiguracionTerapeuta() {
+        return "configuracionTerapeuta";
+    }
+
+
+    
     @GetMapping("/administrador")
     public String mostrarVistaAdministrador(HttpSession session, Model model) {
         Usuario usuario = (Usuario) session.getAttribute("usuarioObj");
@@ -164,5 +212,51 @@ public class AuthController {
 
         return "redirect:/login"; // redirigir si no es admin
     }
+
+    @Controller
+    @RequestMapping("/administrador")
+    public class AdminController {
+
+        @GetMapping("/inicio")
+        public String mostrarPanelAdmin() {
+            return "adminInicio";
+        }
+
+        @GetMapping("/usuarios")
+        public String mostrarUsuarios() {
+            return "adminUsuarios";
+        }
+
+        @GetMapping("/psicologos")
+        public String mostrarPsicologos() {
+            return "adminPsicologos";
+        }
+
+        @GetMapping("/reportes")
+        public String mostrarReportes() {
+            return "adminReportes";
+        }
+
+        @GetMapping("/contenido")
+        public String mostrarContenido() {
+            return "adminContenido";
+        }
+
+        @GetMapping("/terapias")
+        public String mostrarTerapias() {
+            return "adminTerapias";
+        }
+
+        @GetMapping("/juegos")
+        public String mostrarJuegos() {
+            return "adminJuegos";
+        }
+
+        @GetMapping("/configuracion")
+        public String mostrarConfiguracion() {
+            return "adminConfiguracion";
+        }
+    }
+
     
 }
