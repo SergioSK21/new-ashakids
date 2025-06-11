@@ -17,6 +17,7 @@
     }
 
     .sidebar {
+      justify-content: start;
       position: fixed;
       top: 0;
       bottom: 0;
@@ -125,9 +126,6 @@
       <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
     </div>
     <nav class="nav flex-column">
-      <a class="nav-link" href="#" onclick="generarFactura()">
-        <i class="fas fa-file-invoice me-2"></i> Generar Reporte
-      </a>
       <a class="nav-link active" href="#">
         <i class="fas fa-home me-2"></i> Dashboard
       </a>
@@ -137,7 +135,10 @@
       <a class="nav-link" href="#">
         <i class="fas fa-user-md me-2"></i> Psicólogos
       </a>
-      <a class="nav-link text-danger" th:href="@{/logout}">
+      <a class="nav-link" href="#" onclick="generarFactura()">
+        <i class="fas fa-file-invoice me-2"></i> Generar Reporte
+      </a>
+      <a class="nav-link text-danger" th:href="@{/}">
         <i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión
       </a>
     </nav>
