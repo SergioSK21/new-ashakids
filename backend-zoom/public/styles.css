@@ -127,3 +127,33 @@ footer .list-inline-item a:hover {
     color: #ff9900;
     cursor: pointer;
 }
+
+/* Fondo general para página agendar */
+.fondo-agendar {
+    background: linear-gradient(to right, #e3f1ff, #94e1ff);
+    min-height: 100vh;
+}
+
+/* Centrado total del contenido */
+.form-wrapper {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Botón "Volver atrás" */
+.volver-btn {
+    border: 2px solid #ff9900;
+    color: #ff9900;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    padding: 7px;
+    border-radius: 25px;
+}
+
+.volver-btn:hover {
+    background-color: white;
+    color: #ff9900;
+    border-color: #ff9900;
+}

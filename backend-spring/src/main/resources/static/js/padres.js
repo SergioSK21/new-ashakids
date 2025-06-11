@@ -89,7 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("active");
   });
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> dfebf74f83a65f85810d1f2da76db17a9064b88f
 /*
 function vincularBotonesReservar() {
   const botones = document.querySelectorAll(".btn-reservar");
