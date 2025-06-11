@@ -11,119 +11,131 @@
   <link rel="stylesheet" th:href="@{/css/bienvenido.css}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
-    
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
     body {
-      background-color: #f4fbff;
-      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #c9eaff, #e6f7ff);
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
     }
 
     .sidebar {
-      justify-content: start;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 240px;
-      background-color: #fff;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      z-index: 1030;
+      background-color: #0f4c81;
+      color: white;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .sidebar .nav-link {
-      color: #333;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
+      color: #e3f2fd;
+      font-weight: 600;
+      margin: 0.4rem 0;
+      font-size: 1rem;
     }
 
-    .sidebar .nav-link.active {
-      background-color: #ff9900;
-      color: white;
-      border-radius: 8px;
-    }
-
+    .sidebar .nav-link.active,
     .sidebar .nav-link:hover {
-      background-color: #ffe0b2;
-      border-radius: 8px;
+      background-color: #2196f3;
+      color: white;
+      border-radius: 10px;
     }
 
-    .sidebar-toggle {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-
-      .sidebar-toggle {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1050;
-      }
-
-      .sidebar.show {
-        display: block;
-        background-color: #fff;
-        width: 240px;
-        height: 100%;
-        position: fixed;
-        padding: 1rem;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .main-content {
-        margin-left: 0 !important;
-      }
+    .sidebar-header img {
+      margin: 1rem auto;
+      display: block;
+      background-color: #c1d9ff;
+      border-radius: 15%;
+      border: 5px solid #214a6b;
     }
 
     .main-content {
-      margin-left: 260px;
       padding: 2rem;
     }
 
-    .card-feature {
-      border-radius: 15px;
-      transition: transform 0.2s ease;
-    }
-
-    .card-feature:hover {
-      transform: scale(1.05);
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-    }
-
-    .feature-text {
-      font-size: 1.1rem;
-      font-weight: 500;
+    h2, h4 {
+      font-weight: 700;
+      color: #0a3d62;
     }
 
     .info-box {
-      background-color: #fff3cd;
+      background-color: #ffefc5;
+      border-left: 6px solid #ffc107;
       padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      font-weight: 500;
+      border-radius: 12px;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-feature {
+      border-radius: 20px;
+      transition: transform 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .card-feature:hover {
+      transform: scale(1.07);
+    }
+
+    .feature-icon {
+      width: 55px;
+      height: 55px;
+    }
+
+    .bg-white.rounded.p-4.shadow {
+      background: linear-gradient(145deg, #fefefe, #f3f9ff);
+      border: 1px solid #d0e4ff;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 123, 255, 0.15);
+    }
+
+    .bg-white .col-md-4 div {
+      background-color: #f8fbff;
+      border: 2px dashed #c1d9ff;
+      border-radius: 15px;
+    }
+
+    .btn.btn-primary.btn-lg {
+      background-color: #0077cc;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .btn.btn-primary.btn-lg:hover {
+      background-color: #005fa3;
     }
 
     .btn-reservar a {
       color: white;
       text-decoration: none;
     }
+
+    @media (max-width: 768px) {
+      .main-content {
+        margin-left: 0 !important;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .sidebar.show {
+        display: block;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <button class="btn btn-warning sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('show')">☰</button>
-
   <div class="sidebar">
     <div class="sidebar-header text-center">
-      <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
+      <a th:href="@{/}">
+        <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
+      </a>
+      
     </div>
     <nav class="nav flex-column">
 
@@ -134,10 +146,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Mensajes" width="20" class="me-2 align-middle">
             Mensajes
         </a>
-        
-      <a class="nav-link" th:href="@{/ejemplo1}">
-        <i class="fas fa-user-friends me-2"></i> RD
-      </a>
+
       <a class="nav-link" th:href="@{/psicologos}">
         <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Psicólogos" width="20" class="me-2 align-middle"> Psicólogos
       </a>
@@ -164,7 +173,7 @@
             Configuración
         </a>
 
-      <a class="nav-link text-danger" th:href="@{/}">
+      <a class="nav-link text-danger" th:href="@{/login}">
         <i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión
       </a>
     </nav>
@@ -181,7 +190,7 @@
 
       <div class="row justify-content-center g-3 mb-4">
 
-        <div class="col-6 col-md-3 text-center">
+        <div class="col-6 col-md-2 text-center">
           <a class="text-decoration-none" th:href="@{/agenda}">
             <div class="bg-info text-white p-3 card-feature shadow-sm">
               <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="feature-icon mb-2" alt="Agenda">
@@ -190,20 +199,38 @@
           </a>
         </div>
 
-        <div class="col-6 col-md-3 text-center">
-          <a class="text-decoration-none" th:href="@{/foros}">
-            <div class="bg-success text-white p-3 card-feature shadow-sm">
-              <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" class="feature-icon mb-2" alt="Foros">
-              <div class="feature-text">Foros</div>
+        <div class="col-6 col-md-2 text-center">
+          <a class="text-decoration-none" th:href="@{/diario}">
+            <div class="bg-primary p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" class="feature-icon mb-2" alt="Diario">
+              <div class="feature-text text-white">Diario</div>
             </div>
           </a>
         </div>
-        
-        <div class="col-6 col-md-3 text-center">
+
+        <div class="col-6 col-md-2 text-center">
+          <a class="text-decoration-none" th:href="@{/tests}">
+            <div class="bg-warning p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" class="feature-icon mb-2" alt="Tests">
+              <div class="feature-text" style="color: black;">Tests</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-2 text-center">
           <a class="text-decoration-none" th:href="@{/tips}">
-            <div class="bg-warning text-dark p-3 card-feature shadow-sm">
-              <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" class="feature-icon mb-2" alt="Tips">
-              <div class="feature-text">Tips</div>
+            <div class="bg-dark p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/4322/4322991.png" class="feature-icon mb-2" alt="Tips">
+              <div class="feature-text" style="color: white;">Contenido</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-2 text-center">
+          <a class="text-decoration-none" th:href="@{/ejemplo1}">
+            <div class="bg-success p-3 card-feature shadow-sm">
+              <img src="https://cdn-icons-png.flaticon.com/512/3771/3771565.png" class="feature-icon mb-2" alt="Tips">
+              <div class="feature-text" style="color: white;">Rincon Divertido</div>
             </div>
           </a>
         </div>
@@ -212,18 +239,40 @@
 
 
 
-      <h4 class="mt-4">Próximas Citas</h4>
-      <div id="contenido-dinamico">
-        <!-- Aquí puedes cargar las citas dinámicamente con JS si quieres -->
+      <div class="bg-white rounded p-4 shadow">
+        <h4 class="mb-4 text-center">Agenda tu primera cita</h4>
+        <div class="row g-3 text-center">
+          <div class="col-md-4">
+            <div class="p-3 border rounded">
+              <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" width="50" alt="Especialista">
+              <p class="mt-2">1. Elige a tu especialista ideal</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded">
+              <img src="https://cdn-icons-png.flaticon.com/512/2922/2922705.png" width="50" alt="Agenda">
+              <p class="mt-2">2. Agenda tu cita</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border rounded">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="50" alt="Progreso">
+              <p class="mt-2">3. Conoce tu progreso terapéutico</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-primary btn-lg btn-reservar">
+            <a th:href="@{'http://localhost:3000/crear-reunion.html'}">
+              Agendar reunión Zoom
+            </a>
+          </button>
+        </div>
       </div>
 
-      <div class="text-center mt-4">
-        <button class="btn btn-primary btn-lg btn-reservar">
-          <a th:href="@{'http://localhost:3000/crear-reunion.html'}">
-            Agendar reunión Zoom
-          </a>
-        </button>
-      </div>
+
+
     </div>
   </div>
 
@@ -245,32 +294,6 @@
 
   <script th:src="@{/js/padres.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    async function generarFactura() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-
-      // Contenido de la factura
-      doc.setFontSize(16);
-      doc.text("🧾 Factura de Consulta - AshaKids", 20, 20);
-
-      doc.setFontSize(12);
-      doc.text("Fecha: " + new Date().toLocaleDateString(), 20, 30);
-      doc.text("Paciente: Juan", 20, 40);
-      doc.text("Padre/Madre: Javier", 20, 50);
-      doc.text("Psicóloga: Susana Horia", 20, 60);
-      doc.text("Modalidad: Virtual (Zoom)", 20, 70);
-      doc.text("Duración: 60 minutos", 20, 80);
-      doc.text("Costo: S/. 80.00", 20, 90);
-
-      doc.setFontSize(10);
-      doc.text("Gracias por confiar en AshaKids ❤️", 20, 110);
-
-      // Descargar el PDF
-      doc.save("factura_ashakids.pdf");
-    }
-</script>
 
 
 </body>
