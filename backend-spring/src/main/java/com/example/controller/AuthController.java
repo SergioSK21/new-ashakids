@@ -113,4 +113,8 @@ public class AuthController {
         return "psicologos";
     }
     
+    @GetMapping("/recompensas")
+    public String mostrarRecompensas(Model model) {
+        return "recompensas";
+    }
 }
