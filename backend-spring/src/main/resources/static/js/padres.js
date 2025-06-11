@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*
 function vincularBotonesReservar() {
   const botones = document.querySelectorAll(".btn-reservar");
 
@@ -128,7 +127,7 @@ function vincularBotonesReservar() {
     });
   });
 }
-*/
+
 
 function mostrarModalZoom(link) {
   const linkBtn = document.getElementById("linkReunion");

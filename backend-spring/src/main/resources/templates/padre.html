@@ -10,9 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" th:href="@{/css/bienvenido.css}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
-
+  <style th:fragment="style">
+    
     body {
       background: linear-gradient(to right, #c9eaff, #e6f7ff);
       font-family: 'Quicksand', sans-serif;
@@ -130,7 +129,7 @@
 
 <body>
 
-  <div class="sidebar">
+  <div class="sidebar" th:fragment="sidebar">
     <div class="sidebar-header text-center">
       <a th:href="@{/}">
         <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
@@ -138,9 +137,8 @@
       
     </div>
     <nav class="nav flex-column">
-
       <a class="nav-link active" th:href="@{/padre}">
-        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Inicio" width="20" class="me-2 align-middle"> Inicio
+        <i class="fas fa-home me-2"></i> Dashboard
       </a>
         <a class="nav-link" href="#">
             <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Mensajes" width="20" class="me-2 align-middle">
