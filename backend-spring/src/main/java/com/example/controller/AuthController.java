@@ -118,4 +118,8 @@ public class AuthController {
         return "agenda";
     }
     
+    @GetMapping("/recompensas")
+    public String mostrarRecompensas(Model model) {
+        return "recompensas";
+    }
 }
