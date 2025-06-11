@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" th:href="@{/css/bienvenido.css}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <style>
+  <style th:fragment="style">
     
     body {
       background-color: #f4fbff;
@@ -122,12 +122,12 @@
 
   <button class="btn btn-warning sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('show')">☰</button>
 
-  <div class="sidebar">
+  <div class="sidebar" th:fragment="sidebar">
     <div class="sidebar-header text-center">
       <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
     </div>
     <nav class="nav flex-column">
-      <a class="nav-link active" href="#">
+      <a class="nav-link active" th:href="@{/padre}">
         <i class="fas fa-home me-2"></i> Dashboard
       </a>
       <a class="nav-link" th:href="@{/ejemplo1}">

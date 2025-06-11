@@ -122,4 +122,5 @@ public class AuthController {
     public String mostrarRecompensas(Model model) {
         return "recompensas";
     }
+
 }
