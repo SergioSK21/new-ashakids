@@ -24,7 +24,6 @@
       bottom: 0;
       left: 0;
       width: 240px;
-      padding: 1rem;
       background-color: #fff;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       z-index: 1030;
@@ -127,15 +126,26 @@
       <img th:src="@{/img/logo.svg}" alt="Logo" width="180">
     </div>
     <nav class="nav flex-column">
-      <a class="nav-link active" href="#">
-        <i class="fas fa-home me-2"></i> Dashboard
+
+      <a class="nav-link active" th:href="@{/padre}">
+        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Inicio" width="20" class="me-2 align-middle"> Inicio
       </a>
+        <a class="nav-link" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Mensajes" width="20" class="me-2 align-middle">
+            Mensajes
+        </a>
+        
       <a class="nav-link" th:href="@{/ejemplo1}">
         <i class="fas fa-user-friends me-2"></i> RD
       </a>
       <a class="nav-link" th:href="@{/psicologos}">
-        <i class="fas fa-user-md me-2"></i> Psicólogos
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Psicólogos" width="20" class="me-2 align-middle"> Psicólogos
       </a>
+
+        <a class="nav-link" th:href="@{/agenda}">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Agenda" width="20" class="me-2 align-middle">
+            Agenda
+        </a>
       
       <a class="nav-link" href="http://localhost:8080/generar-factura" target="_blank">
         <i class="fas fa-file-invoice me-2"></i> Generar Reporte
@@ -145,6 +155,15 @@
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Recompensas" width="20" class="me-2 align-middle">
             Recompensas
         </a>
+        <a class="nav-link" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Perfil" width="20" class="me-2 align-middle">
+            Perfil
+        </a>
+        <a class="nav-link" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png" alt="Configuración" width="20" class="me-2 align-middle">
+            Configuración
+        </a>
+
       <a class="nav-link text-danger" th:href="@{/}">
         <i class="fas fa-sign-out-alt me-2"></i> Cerrar sesión
       </a>
@@ -161,14 +180,16 @@
       </div>
 
       <div class="row justify-content-center g-3 mb-4">
+
         <div class="col-6 col-md-3 text-center">
           <a class="text-decoration-none" th:href="@{/agenda}">
             <div class="bg-info text-white p-3 card-feature shadow-sm">
               <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="feature-icon mb-2" alt="Agenda">
-              <div class="feature-text">Agenda</div>
+              <div class="feature-text" style="color: black;">Agenda</div>
             </div>
           </a>
         </div>
+
         <div class="col-6 col-md-3 text-center">
           <a class="text-decoration-none" th:href="@{/foros}">
             <div class="bg-success text-white p-3 card-feature shadow-sm">
@@ -177,6 +198,7 @@
             </div>
           </a>
         </div>
+        
         <div class="col-6 col-md-3 text-center">
           <a class="text-decoration-none" th:href="@{/tips}">
             <div class="bg-warning text-dark p-3 card-feature shadow-sm">
@@ -185,6 +207,7 @@
             </div>
           </a>
         </div>
+
       </div>
 
 
