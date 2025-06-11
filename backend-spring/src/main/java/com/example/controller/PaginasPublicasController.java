@@ -40,9 +40,10 @@ public class PaginasPublicasController {
     public String servicios() {
         return "servicios";
     }
-
+    
     @GetMapping("/")
     public String redirigirInicio() {
         return "index";
     }
+
 }
