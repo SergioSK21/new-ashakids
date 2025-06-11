@@ -135,9 +135,11 @@
       <a class="nav-link" href="#">
         <i class="fas fa-user-md me-2"></i> Psicólogos
       </a>
-      <a class="nav-link" href="#" onclick="generarFactura()">
+      
+      <a class="nav-link" href="http://localhost:8080/generar-factura" target="_blank">
         <i class="fas fa-file-invoice me-2"></i> Generar Reporte
       </a>
+
       <a class="nav-link" href="recompensas.html">
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Recompensas" width="20" class="me-2 align-middle">
             Recompensas
@@ -214,29 +216,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-  async function generarFactura() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+    async function generarFactura() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
 
-    // Contenido de la factura
-    doc.setFontSize(16);
-    doc.text("🧾 Factura de Consulta - AshaKids", 20, 20);
+      // Contenido de la factura
+      doc.setFontSize(16);
+      doc.text("🧾 Factura de Consulta - AshaKids", 20, 20);
 
-    doc.setFontSize(12);
-    doc.text("Fecha: " + new Date().toLocaleDateString(), 20, 30);
-    doc.text("Paciente: Juan", 20, 40);
-    doc.text("Padre/Madre: Javier", 20, 50);
-    doc.text("Psicóloga: Susana Horia", 20, 60);
-    doc.text("Modalidad: Virtual (Zoom)", 20, 70);
-    doc.text("Duración: 60 minutos", 20, 80);
-    doc.text("Costo: S/. 80.00", 20, 90);
+      doc.setFontSize(12);
+      doc.text("Fecha: " + new Date().toLocaleDateString(), 20, 30);
+      doc.text("Paciente: Juan", 20, 40);
+      doc.text("Padre/Madre: Javier", 20, 50);
+      doc.text("Psicóloga: Susana Horia", 20, 60);
+      doc.text("Modalidad: Virtual (Zoom)", 20, 70);
+      doc.text("Duración: 60 minutos", 20, 80);
+      doc.text("Costo: S/. 80.00", 20, 90);
 
-    doc.setFontSize(10);
-    doc.text("Gracias por confiar en AshaKids ❤️", 20, 110);
+      doc.setFontSize(10);
+      doc.text("Gracias por confiar en AshaKids ❤️", 20, 110);
 
-    // Descargar el PDF
-    doc.save("factura_ashakids.pdf");
-  }
+      // Descargar el PDF
+      doc.save("factura_ashakids.pdf");
+    }
 </script>
 
 
