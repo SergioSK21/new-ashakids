@@ -14,6 +14,7 @@ import java.util.Optional;
 @RequestMapping("/padres")
 public class PadreController {
 
+    
     @Autowired
     private PadreRepository padreRepository;
 
@@ -49,5 +50,8 @@ public class PadreController {
         }
         padreRepository.deleteById(id);
         return ResponseEntity.noContent().build();
+ 
     }
+
+    
 }

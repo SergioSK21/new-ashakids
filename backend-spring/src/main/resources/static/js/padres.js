@@ -32,7 +32,11 @@ async function crearReunionDesdeCard(reunionId) {
         console.error(err);
         alert('❌ No se pudo crear la reunión');
     }
-}
+} 
+
+
+
+
 function cambiarSeccion(elemento) {
   const seccion = elemento.getAttribute("data-seccion");
   cargarContenido(seccion); // Esta es la función que ya tienes
@@ -89,10 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("active");
   });
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> dfebf74f83a65f85810d1f2da76db17a9064b88f
 /*
 function vincularBotonesReservar() {
   const botones = document.querySelectorAll(".btn-reservar");
